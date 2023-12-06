@@ -13,7 +13,7 @@ class SAFEEmbedder:
         self.emb = None
 
     def loadmodel(self):
-        with tf.gfile.GFile(self.model_file, "rb") as f:
+        with tf.compat.v1.gfile.GFile(self.model_file, "rb") as f:
             graph_def = tf.compat.v1.GraphDef()
             graph_def.ParseFromString(f.read())
 
